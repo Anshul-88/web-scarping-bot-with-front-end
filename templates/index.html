@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraper</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Scraper</h1>
+        <form id="scraper-form" method="POST" action="{{ url_for('index') }}">
+            <label for="url">Website URL:</label>
+            <input type="text" id="url" name="url" required>
+            <label for="file_name">Excel File Name:</label>
+            <input type="text" id="file_name" name="file_name" required>
+            <label for="total_data">Total Data:</label>
+            <input type="text" id="total_data" name="total_data" required>
+            <input type="submit" value="Scrape">
+        </form>
+        <div id="loading-animation"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <form id="stop-form" method="POST" action="{{ url_for('stop') }}">
+        <input type="submit" value="Stop Scraping">
+    </form>
+</body>
+</html>
+
+
+
